@@ -1,0 +1,15 @@
+<mat-card class="food-card">
+  <img mat-card-image data-src="{{ picture }}">
+  <mat-card-content>
+    <p>
+      About description...
+    </p>
+    <div class="item-name">
+      <a routerLink="/travels/{{id}}">{{name}}</a>
+    </div>
+    
+    <div class="product-price">
+      {{getCurrency()}}{{price}}
+    </div>
+  </mat-card-content>
+</mat-card>

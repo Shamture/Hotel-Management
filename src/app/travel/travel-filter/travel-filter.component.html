@@ -1,0 +1,8 @@
+<div class="filter-list">
+  <mat-chip-list class="mat-chip-list-stacked">
+    <mat-chip *ngFor="let filter of availableFilters" selected="true" [ngClass]="{ 'filter-activated': filterActive(filter)}"
+      (click)="changeFilterStatus(filter)">
+      {{filter.type}}
+    </mat-chip>
+  </mat-chip-list>
+</div>

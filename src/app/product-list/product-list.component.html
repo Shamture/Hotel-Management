@@ -1,0 +1,9 @@
+<div class="list-filter">
+  <app-product-filter [availableFilters]="filters" [activatedFilters]="activeFilters" (activeFilters)="updateActivatedFilters($event)"></app-product-filter>
+</div>
+<div class="list-products">
+  <div class="list-product" *ngFor="let item of itemsAfterFilter()">
+    <app-product [id]="item.id" [name]="item.name" [price]="item.price" [picture]="item.picture" >
+    </app-product>
+  </div>
+</div>

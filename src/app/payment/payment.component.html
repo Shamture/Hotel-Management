@@ -1,0 +1,85 @@
+<mat-horizontal-stepper [linear]="false">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>VIEW PLAN</ng-template>
+      <mat-form-field>
+        <h2>
+          <input matInput placeholder="Payable Amount" disabled value="{{hotel.offerAmount}}">
+        </h2>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Offer Amount" disabled value="{{hotel.amount}}">
+      </mat-form-field>
+      <br>
+      <label for="taxDetails">Inclusive of all taxes</label>
+      <div>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>ENTER DETAILS OF PRIMARY TRAVELLER</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Name" value="">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Mobile Number" value="">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Email" value="">
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>PAYMENT OPTIONS</ng-template>
+    <!-- CREDIT CARD FORM STARTS HERE -->
+    <mat-card class="payment-card">
+      <mat-card-header>
+        <mat-card-title>Payment Details</mat-card-title>
+        <img class="img-responsive pull-right" src="assets/images/accepted_c22e0.png">
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="CARD NUMBER" value="">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="EXPIRATION DATE" value="">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="CV CODE" value="">
+        </mat-form-field>
+
+      </mat-card-content>
+      <mat-card-actions align="center">
+        <button mat-raised-button color="accent" (click)="payment()">PAY NOW</button>
+      </mat-card-actions>
+    </mat-card>
+    <!-- CREDIT CARD FORM ENDS HERE -->
+
+    <div>
+      <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+      <button mat-raised-button color="primary" matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>QR CODE</ng-template>
+    <div>
+      <qr-code [value]="'Payment success'" [size]="150"></qr-code>
+    </div>
+
+    <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+    <button mat-raised-button color="primary" matStepperNext>Next</button>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>BILLING</ng-template>
+    You are done.. Bill will be mailed to your registered mail.<br>
+    <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+  </mat-step>
+</mat-horizontal-stepper>

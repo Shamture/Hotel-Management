@@ -1,0 +1,9 @@
+<div class="product-details">
+  <div class="product">
+    <app-product [name]="product.name" [size]="'3'" [price]="product.price"></app-product>
+    <app-type-list [types]="product.types"></app-type-list>
+    <button mat-raised-button color="primary" (click)="addToCart(product)">
+      Add to package
+    </button>
+  </div>
+</div>

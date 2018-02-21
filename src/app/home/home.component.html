@@ -1,0 +1,40 @@
+<img class="banner-img" src="assets/images/pestana-chelsea-promocoes-banner.jpg" />
+<mat-card class="home-card">
+  <form class="home-form">
+    <mat-card-header>
+      <mat-card-title>INDIA’S TOP RATED HOTEL </mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content >
+
+      <mat-form-field >
+        <input matInput placeholder="City" aria-label="City" [matAutocomplete]="auto" [formControl]="cityCtrl" [(ngModel)]="locationSelectedValue">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let city of filteredCities | async" [value]="city.name" >
+            <span>{{ city.name }}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose checkin date"
+        (dateInput)="addEvent1('input', $event)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1" placeholder="Choose checkout date"
+        (dateInput)="addEvent1('input', $event)">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Room" value="1">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="searchResult()">Search</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

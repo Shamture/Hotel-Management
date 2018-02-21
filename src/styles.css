@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+.body-main{float:left;width:100%;}
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mat-chip-list-stacked{float:right;width:37%;}
+.mat-chip-list-stacked .mat-chip-list-wrapper .mat-chip:not(.mat-basic-chip) {
+    display: block;
+    margin: 0 0 10px 10px !important;
+    margin-bottom: 8px;
+    border-radius: 0;
+    cursor: pointer;
+    float: left;
+}

@@ -1,0 +1,9 @@
+.type-list {
+  display: flex;
+}
+
+.type-box {
+  width: 1em;
+  height: 1em;
+  margin: 0.2em;
+}

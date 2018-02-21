@@ -1,0 +1,8 @@
+<p>You have {{ packageCartItems.length }} items in your package</p>
+<div *ngFor="let item of packageCartItems">
+  <app-product [id]="item.id" [name]="item.name" [price]="item.price">
+  </app-product>
+  <app-type-list [types]="item.types"></app-type-list>
+  <button mat-raised-button color="warn" (click)="removeItem(item)">Remove</button>
+</div>
+<p>Total: {{ getTotal() | async }}</p>
